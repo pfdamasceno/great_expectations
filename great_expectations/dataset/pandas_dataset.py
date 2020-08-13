@@ -541,6 +541,22 @@ Notes:
 
     @DocInherit
     @MetaPandasDataset.column_map_expectation
+    def expect_column_values_to_be_identical(
+        self,
+        column,
+        mostly=None,
+        result_format=None,
+        row_condition=None,
+        condition_parser=None,
+        include_config=True,
+        catch_exceptions=None,
+        meta=None,
+    ):
+
+        return column==column.unique()[0]
+
+    @DocInherit
+    @MetaPandasDataset.column_map_expectation
     def expect_column_values_to_not_be_null(
         self,
         column,
